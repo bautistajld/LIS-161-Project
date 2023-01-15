@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="margin-left: 50px;">    
+    <h1>{% block title %} Create a new post here {% endblock %}</h1>
+    <form method="POST" enctype="multipart/form-data">
+
+        <label for="petname">PET NAME</label>
+        <br>
+        <input style="margin: 7px;" type="text" name="petname"
+               placeholder="Text"
+               value="{{ request.form['petname'] }}"></input>
+        <br>
+
+        <label for="petage">PET AGE</label>
+        <br>
+        <input style="margin: 7px;" type="number" name="petage"
+               placeholder="Number"
+               value="{{ request.form['petage'] }}"></input>
+        <br>
+
+        <label for="petdate">DATE LAST SEEN</label>
+        <br>
+        <input style="margin: 7px;" type="date" name="petdate"
+               value="{{ request.form['petdate'] }}"></input>
+        <br>
+        
+        <label for="petimage">SUBMIT PICTURE HERE (.JPG)</label>
+        <br>
+        <input style="margin: 7px;" type="file" id="myFile" name="uploaded-file" accept=".jpg"></input>
+        <br>
+
+        <label for="petowner">OWNER NAME</label>
+        <br>
+        <input style="margin: 7px;" type="text" name="petowner"
+               placeholder="Text"
+               value="{{ request.form['petowner'] }}"></input>
+        <br>
+
+        <label for="petowcontact">OWNER EMAIL</label>
+        <br>
+        <input style="margin: 7px;" type="email" name="petowcontact"
+               placeholder="Email"
+               value="{{ request.form['petowcontact'] }}"></input>
+        <br>
+
+        <button style="margin-top: 15px;" type="submit">SUBMIT</button>
+
+    </form>
+</div>
+{% endblock %}
